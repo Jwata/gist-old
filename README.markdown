@@ -5,16 +5,24 @@ Works great with Gist: The Website.
 
 Installation
 ------------
-
+rubygems preparation
 ```bash
 $ sudo apt-get install ruby
 $ sudo apt-get install rubygems
 $ sudo apt-get install libopenssl-ruby
-$ sudo gem install gist
-$ sudo cp /var/lib/gems/1.8/bin/gist /usr/local/bin/
 ```
 
-add "require 'rubygems'" on a "require 'gist'"
+clone this repo's spec and install
+```bash
+$ git clone git://github.com/watanabe0621/gist.git
+$ pushd gist
+$ gem build gist.gemspec
+$ sudo gem install ./gist-3.1.0.gem
+$ sudo ln -s /var/lib/gems/1.8/gems/gist-3.1.0/bin/gist /usr/local/bin
+$ popd
+```
+
+add "require 'rubygems'" on a "require 'gist'"  
 This problem is just fixing.
 
 Authentication
